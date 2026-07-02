@@ -6,7 +6,7 @@ A high-performance **local exchange simulator** in C++20 — not another 200-lin
 
 ## Demo
 
-![FastExchange live dashboard](docs/demo.gif)
+![FastExchange live dashboard](FastExchange/docs/demo.gif)
 
 *Live dashboard during a balanced workload scenario — synthetic orders, real-time order book, trades, and latency metrics (local simulation).*
 
