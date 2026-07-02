@@ -1,0 +1,39 @@
+name: balanced
+duration_sec: 60
+seed: 42
+
+symbols:
+  - ABC
+  - XYZ
+  - TECH
+
+tick_size: 0.0001
+
+initial_mid_prices:
+  ABC: 105.0000
+  XYZ: 42.5000
+  TECH: 880.0000
+
+strategy: balanced
+
+workload:
+  arrival_rate: 50000
+  buy_probability: 0.50
+  sell_probability: 0.50
+  price_distribution: normal
+  price_bias_ticks: 0
+  quantity_distribution: poisson
+  quantity_lambda: 50
+  quantity_min: 1
+  quantity_max: 100
+  cancel_probability: 0.08
+  modify_probability: 0.03
+
+engine:
+  max_order_size: 10000
+  risk_plugin: default
+  matching_algorithm: price_time_fifo
+
+output:
+  event_log: results/balanced.bin
+  metrics: results/balanced-metrics.json

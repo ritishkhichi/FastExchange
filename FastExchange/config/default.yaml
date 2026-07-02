@@ -1,0 +1,53 @@
+exchange:
+  name: FAST Exchange
+
+matching:
+  algorithm: price_time_fifo
+
+symbols:
+  - ABC
+  - XYZ
+  - TECH
+  - COIN
+  - FOOD
+
+tick_size: 0.0001
+
+initial_mid_prices:
+  ABC: 105.0000
+  XYZ: 42.5000
+  TECH: 880.0000
+  COIN: 12.5000
+  FOOD: 28.7500
+
+risk:
+  max_order_size: 100000
+  auto_register_symbols: false
+
+workload:
+  profile: balanced
+  arrival_rate: 50000
+  buy_probability: 0.50
+  sell_probability: 0.50
+  price_distribution: normal
+  price_bias_ticks: 0
+  quantity_distribution: poisson
+  quantity_lambda: 50
+  quantity_min: 1
+  quantity_max: 100
+  cancel_probability: 0.08
+  modify_probability: 0.03
+
+benchmark:
+  warmup: 5
+  iterations: 10
+
+dashboard:
+  port: 8080
+
+api:
+  host: 127.0.0.1
+  port: 8080
+
+output:
+  directory: results

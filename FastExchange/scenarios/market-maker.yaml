@@ -1,0 +1,36 @@
+name: market-maker
+duration_sec: 90
+seed: 123
+
+symbols:
+  - ABC
+  - XYZ
+
+tick_size: 0.0001
+
+initial_mid_prices:
+  ABC: 105.0000
+  XYZ: 42.5000
+
+strategy: market-maker
+
+workload:
+  arrival_rate: 80000
+  buy_probability: 0.50
+  sell_probability: 0.50
+  price_distribution: normal
+  price_bias_ticks: 0
+  quantity_distribution: uniform
+  quantity_min: 1
+  quantity_max: 20
+  cancel_probability: 0.40
+  modify_probability: 0.25
+
+engine:
+  max_order_size: 5000
+  risk_plugin: default
+  matching_algorithm: price_time_fifo
+
+output:
+  event_log: results/market-maker.bin
+  metrics: results/market-maker-metrics.json

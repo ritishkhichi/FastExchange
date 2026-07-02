@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0b0e14;
+  color: #e6edf3;
+}
+
+.dashboard {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid #21262d;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+header p {
+  color: #8b949e;
+  font-size: 0.875rem;
+  margin-top: 0.35rem;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.live-badge {
+  background: #238636;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.65; }
+}
+
+.latency-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.counters {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+.empty-hint {
+  color: #8b949e;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.empty-hint code {
+  background: #21262d;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: #58a6ff;
+}
+
+.spread-row {
+  text-align: center;
+  color: #8b949e !important;
+  font-size: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.panel {
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 200px;
+}
+
+.panel h2 {
+  font-size: 0.875rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.panel.full {
+  grid-column: 1 / -1;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #58a6ff;
+}
+
+table {
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid #21262d;
+}
+
+th {
+  color: #8b949e;
+}
+
+.bid { color: #3fb950; }
+.ask { color: #f85149; }
